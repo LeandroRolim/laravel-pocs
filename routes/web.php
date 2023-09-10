@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use OpenTelemetry\API\Trace\TracerInterface;
+use OpenTelemetry\SDK\Common\Configuration\Configuration;
+use OpenTelemetry\SDK\Common\Configuration\Variables;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +17,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    /** @var TracerInterface $tracer */
+    $tracer = \OpenTelemetry\API\Globals::tracerProvider()->getTracer('laravel');
+    $span = $tracer->spanBuilder('home')->startSpan();
+    $scope = $span->activate();
+    \App\Models\User::factory()->create();
+    $span->end();
+    $scope->detach();
     return view('welcome');
 });
+

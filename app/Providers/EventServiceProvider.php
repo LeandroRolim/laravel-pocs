@@ -18,15 +18,16 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        \Illuminate\Database\Events\QueryExecuted::class => [
+            \App\Listeners\QueryBuilderTraceListener::class,
+        ],
+        \Illuminate\Foundation\Http\Events\RequestHandled::class => [
+            \App\Listeners\EndTraceListener::class,
+        ],
+        'bootstrapped: Illuminate\Foundation\Bootstrap\BootProviders' => [
+            \App\Listeners\StartTraceListener::class,
+        ]
     ];
-
-    /**
-     * Register any events for your application.
-     */
-    public function boot(): void
-    {
-        //
-    }
 
     /**
      * Determine if events and listeners should be automatically discovered.

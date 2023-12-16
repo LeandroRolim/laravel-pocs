@@ -1,0 +1,10 @@
+{
+    "preset": "psr12",
+    "rules": {
+        "array_push": true,
+        "cast_spaces": true,
+        "no_unset_cast": true,
+        "use_arrow_functions": true,
+        "align_multiline_comment": true
+    }
+}

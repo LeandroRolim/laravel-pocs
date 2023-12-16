@@ -5,6 +5,7 @@
         "cast_spaces": true,
         "no_unset_cast": true,
         "use_arrow_functions": true,
+        "declare_strict_types": true,
         "align_multiline_comment": true
     }
 }

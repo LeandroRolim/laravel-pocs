@@ -2,10 +2,13 @@
     "preset": "psr12",
     "rules": {
         "array_push": true,
+        "array_syntax": true,
         "cast_spaces": true,
         "no_unset_cast": true,
         "use_arrow_functions": true,
         "declare_strict_types": true,
+        "combine_consecutive_issets": true,
+        "blank_line_after_namespace": true,
         "align_multiline_comment": true
     }
 }

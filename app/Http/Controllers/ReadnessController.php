@@ -12,6 +12,6 @@ class ReadnessController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return new ReadnessResource([]);
+        return app(ReadnessResource::class, ['resource' => []]);
     }
 }

@@ -1,0 +1,8 @@
+GET https://pocs.test/api/kafka
+Accept: application/json
+
+###
+GET https://pocs.test/api/kafka2
+Accept: application/json
+
+###

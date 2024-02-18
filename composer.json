@@ -14,7 +14,8 @@
         "mateusjunges/laravel-kafka": "^1.13",
         "spatie/laravel-responsecache": "^7.4",
         "spiral/roadrunner-cli": "^2.5.0",
-        "spiral/roadrunner-http": "^3.0.1"
+        "spiral/roadrunner-http": "^3.0.1",
+      "ext-rdkafka": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
